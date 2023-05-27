@@ -6,41 +6,43 @@ import EditIcon from '@mui/icons-material/Edit';
 import WifiIcon from '@mui/icons-material/Wifi';
 import AppleIcon from '@mui/icons-material/Apple';
 
+const validate = values =>{
+    const errors = {};
+    if(!values.cardNumber){
+        errors.cardNumber = 'Card Number is Required'
+    }
+    else if(values.cardNumber.length <16){
+        errors.cardNumber = 'Card Number cannot be less than 16'
+    }
+    if(!values.cvv){
+        errors.cvv = 'CVV Number is Required'
+    }
+    else if(values.cvv.length<3){
+        errors.cvv = 'CVV Number cannot be less than 3'
+    }
+    if(!values.expiryDate){
+        errors.expiryDate = 'Expiry Date is required'
+    }
+    if(!values.password){
+        errors.password = 'Password is Required'
+    }
+    else if(values.cvv.length<4){
+        errors.cvv = 'Password cannot be less than 4'
+    }
 
+    if(!values.expiryDate){
+        errors.password = 'Invalid Expiry Date'
+    }
+    return errors    
+
+}
 
 const Index = () =>{
     
     useEffect(()=>{
 
     })
-
-    const validate = value =>{
-        const errors = {};
-        if(!value.cardNumber){
-            errors.cardNumber = 'Card Number is Required'
-        }
-        else if(value.cardNumber.length <16){
-            errors.cardNumber = 'Card Number cannot be less than 16'
-        }
-        if(!value.cvv){
-            errors.cvv = 'CVV Number is Required'
-        }
-        else if(value.cvv.length<3){
-            errors.cvv = 'CVV Number cannot be less than 3'
-        }
-        if(!value.password){
-            errors.password = 'Password is Required'
-        }
-        else if(value.cvv.length<4){
-            errors.cvv = 'Password cannot be less than 4'
-        }
-
-        if(!value.expiryDate){
-            errors.password = 'Invalid Expiry Date'
-        }
-        
-
-    }
+    
     const formik = useFormik({
         initialValues: {
             cardNumber: '',
@@ -48,8 +50,8 @@ const Index = () =>{
             password: '',
             cvv: ''
         }, validate,
-        onSubmit: (value)=>{
-            console.log(value)
+        onSubmit: values=>{
+            console.log(values)
         }
         
     })
@@ -76,7 +78,8 @@ const Index = () =>{
 
                         </div>
                         <div className={`row ${Style.formContainer}`} >
-                            <form onSubmit={formik.onSubmit}>
+                            <form onSubmit={formik.handleSubmit}>
+        
                                 <div className={`form-group ${Style.field}`}>
                                     <label htmlFor="cardNumber" className={`${Style.label}`}>Card Number</label>
                                     <p className={`${Style.iconTxt}`}>
@@ -92,7 +95,7 @@ const Index = () =>{
                                         onChange={formik.handleChange}
                                         value={formik.values.cardNumber}
                                     />
-                                    {formik.errors.cardNumber? <span>{formik.errors.cardNumber}</span>: null}
+                                    {formik.errors.cardNumber ? <div>{formik.errors.cardNumber}</div>: null}
                                 </div>
                                 <div  className={` ${Style.fieldContianer} `}>
                                     <div className={`col-5`}>
@@ -185,7 +188,7 @@ const Index = () =>{
                                 <p>09/22</p>
                             </div>
                             <div className={`${Style.mstLogo}`}>
-                                <img src="imgs/logo.png" alt="mastercard logo"/>
+                                <img src="imgs/mastercard.svg" alt="mastercard logo"/>
                             </div>
                         </div>
                     </div>
