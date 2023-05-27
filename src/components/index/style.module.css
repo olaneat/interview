@@ -36,8 +36,8 @@
     }
     .form{
         width: 60%;
-        height: 70%;
-        margin: 10% 10% 10% 20%;
+        height: 85%;
+        margin: 5% 10% 10% 20%;
         background-color: white;
     }
     
@@ -65,7 +65,7 @@
     .chip{
         width: 50%;
         height: 10%;
-        margin: 3% 50% 5% 15%;
+        margin: 5% 50% 5% 15%;
     }
     .iconHint{
         font-size: 0.7em;
@@ -76,17 +76,19 @@
         transform: rotate(90deg);
     }
     .cardDetail{
-        margin: 9% 1% 1% 1%;
+        margin: 35% 1% 1% 10%;
         border-radius: 5%;
-
+        background-color: rgba(255, 255, 255, 1);
+        width: 80%;
+        height: 60%;
+        box-shadow: 50px 25px 35px 50px whitesmoke;
     }
     .mstCard{
-        height: 30%;
-        width: 90%;
-    }
-    .wifiInfo{
-        display: flex;
+        height: 40%;
         width: 100%;
+        display: flex;
+        margin: 1% 1% 15% 1%;
+
     }
     .wifiSignal{
         font-size: 3.5em;
@@ -97,11 +99,125 @@
     }
     .userInfo{
         width: 90%;
-        margin: 10% 2% 2% 2%;
+        margin: 15% 2% 2% 10%;
     }
     .userInfo p{
+        font-size: 1.1em;
+        margin: 2% 1% 2% 3%;
+    }
+    .otherInfo{
+        margin: 7% 2% 5% 2%;
+        height: 20%;
+        display: flex;
+    }
+    .date{
+        margin: 1% 2% 20% 2%;
+    }
+    .mstLogo{
+        width: 50%;
+        margin: 1% 2% 2% 35%;
+    }
+    .mstLogo img{
+        width: 50px;
+        height: 50px;
+    }
+    .bg{
+        background-color: rgba(128,128,128, 0.4);
+        width: 100%;
+        height: 90%;
+        margin: -65% 2% 5% 1%;
+    }
+    .companyInfo{
+        margin: 13% 1% 0% 1%;
+        position: fixed;
+        width: 100%;
+    }
+    .company{
+        display: flex;
+        width: 100%;
+
+    }
+    
+    .companyName{
+        color:  rgba(128,128,128, 0.6);
+        margin: 1% 1% 0% 1% ;
+        
+    }
+    .companylogo{
+        margin: 1% 1% 1% 3% ;
+        display: flex;
+
+    }
+    .companylogo p{
+        border-radius: 50%;
+        background-color: black;
+        width: 15px;
+        height: 15px;
+        margin: 7% 10% 1% 1%;
+    }
+    .companylogos{
+        color: white;
+        font-size: 0.8em;
+        margin-top: -13px;
+    }
+    .GenInfo{
+        display: flex;
+        margin: -2% 0 ;
+
+    }
+
+    .GenName{
+        color:  rgba(128,128,128, 0.6);
+        margin: 1% 1% 0% 1% ;
+        width: 5%; 
+        font-size: 0.9em;
+    }
+    .GenNumber{
         margin: 1%;
-        font-size: 1.2em;
+        font-size: 0.9em;
+
+    }
+
+    hr{
+        list-style-type: 1px dashed gray;
+        width: 100%;
+    }
+
+    .balance{
+    position: fixed;
+    margin: 20% 1% 1% 2%;
+
+    }
+    .pay{
+        color:  rgba(128,128,128, 0.6);
+        font-size: 1.3em;
+
+    }
+    .amount{
+        display: flex;
+    }
+    .currency{
+        color:  rgba(128,128,128, 0.6);
+        font-size: 1em;
+        margin: 8% 1% 1% 2%;
+    }
+    .price{
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    .cent{
+        margin: 8% 1% 1% 2%;
+
+    }
+    .amountInfo{
+        display: flex;
+    }
+    .recieptt{
+        width: 30px;
+        height: 30px;
+    }
+    .bill{
+        margin: 3% 2% 1% 40%;
     }
 }
 

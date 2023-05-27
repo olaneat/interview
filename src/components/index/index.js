@@ -4,6 +4,9 @@ import  Badge  from "react-bootstrap/Badge";
 import { useFormik } from "formik";
 import EditIcon from '@mui/icons-material/Edit';
 import WifiIcon from '@mui/icons-material/Wifi';
+import AppleIcon from '@mui/icons-material/Apple';
+
+
 
 const Index = () =>{
     
@@ -161,19 +164,17 @@ const Index = () =>{
                             </form>
                         </div>
                     </div>
-                    <div className={`col-4 ${Style.cardDetail}`} >
-
-                        <div className={`col-3 ${Style.mstCard}` }>
-                            <div className={`${Style.wifiInfo}`}>
-                                <div className={`${Style.chip}`}>
-                                    <img src="imgs/chip.png" alt="env chip"/>
-                                </div>
-                                <div className={`${Style.wifi}`}>
-                                    <WifiIcon className={`${Style.wifiSignal}`}/>
-                                </div>
-
+                    <div className="col-4">
+                    <div className={` ${Style.cardDetail}`} >
+                        <div className={` ${Style.mstCard}` }>
+                             <div className={`${Style.chip}`}>
+                                <img src="imgs/chip.png" alt="env chip"/>
+                            </div>
+                            <div className={`${Style.wifi}`}>
+                                <WifiIcon className={`${Style.wifiSignal}`}/>
                             </div>
                             
+                                    
                         </div>
                         <div className={`${Style.userInfo}`}>
                             <p className={`${Style.name}`}>Jonathan Micheal</p>
@@ -184,11 +185,54 @@ const Index = () =>{
                                 <p>09/22</p>
                             </div>
                             <div className={`${Style.mstLogo}`}>
-                                <img/>
+                                <img src="imgs/logo.png" alt="mastercard logo"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={`${Style.bg}`}>
+                        <div className={`${Style.companyInfo}`}>
+                            <div className={`${Style.company}`}>
+                                <p className={`${Style.companyName}`}>Company</p>
+                                <p className={`${Style.companylogo}`}>
+                                    <p><AppleIcon className={`${Style.companylogos}`} /></p>
+                                    Apple
+                                </p>
+                            </div>
+                            <div className={`${Style.GenInfo}`}>
+                                <p className={`${Style.GenName}`}>Order Number</p>
+                                <p  className={`${Style.GenNumber}`}>1266201</p>
+
+                            </div>
+                            <div className={`${Style.GenInfo}`}>
+                                <p className={`${Style.GenName}`}>Product</p>
+                                <p  className={`${Style.GenNumber}`}>MacBook Air</p>
+
+                            </div>
+                            <div className={`${Style.GenInfo}`}>
+                                <p className={`${Style.GenName}`}>VAT(20)</p>
+                                <p  className={`${Style.GenNumber}`}>$100.00</p>
+
+                            </div>
+                        </div>
+                        <hr />
+
+                        <div className={Style.balance}>
+
+                            <p className={Style.pay}>You have to pay</p>
+                            <div className={Style.amount}>
+                                <div className={Style.amountInfo}>
+                                <p className={Style.price}>549.</p><p className={Style.cent}>99</p>
+                                    <span className={Style.currency}>USD</span>
+                                </div>
+                                <div className={Style.bill}>
+                                    <img src="imgs/bill.png"  className={Style.recieptt} alt="reciept"/>
+                                </div>
                             </div>
                         </div>
                     </div>
 
+                    </div>
+                    
                 </div>
             </div>
         </div>
