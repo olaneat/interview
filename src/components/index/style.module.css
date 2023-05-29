@@ -10,7 +10,12 @@
     p{
         height: 100%;
     }
-    
+    .header{
+        display: flex;
+    }
+    .title2{
+        font-weight:100;
+    }
     .badge_div{
         display: flex;
        
@@ -81,7 +86,7 @@
         background-color: rgba(255, 255, 255, 1);
         width: 80%;
         height: 50%;
-        box-shadow: 50px 25px 25px 50px whitesmoke;
+        box-shadow: 0px 5px 5px 5px whitesmoke;
     }
     .mstCard{
         height: 25%;

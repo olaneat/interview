@@ -65,9 +65,10 @@ const Index = () =>{
                         <div className="row">
                             <div className={`col-lg-9 col-sm-12 col-md-12  ${Style.header}`}>
                                 <span>
-                                    <img src=""/>
+                                    <img src="imgs/img.png"/>
                                 </span>
-                                <h3><span><b>AceCoin</b></span>Pay</h3>
+                                <h3 className={`${Style.title}`}>AceCoin</h3>
+                                <h3 className={`${Style.title2}`}>Pay</h3>
                             </div>
                             <div className={`col-sm-12 col-md-12 col-lg-3 ${Style.badge_div}`}>
                                 <Badge  className={`${Style.badge}`} bg="secondary">0</Badge>
