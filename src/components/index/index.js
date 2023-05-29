@@ -12,7 +12,7 @@ const Index = () =>{
         
     return (
         <div className={`${Style.container}`}>
-            <ModalPopUp/>
+            <ModalPopUp className={`${Style.modal}`}/>
         </div>
     )
 }
