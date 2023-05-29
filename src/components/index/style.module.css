@@ -162,8 +162,8 @@
     }
     .companylogos{
         color: white;
-        font-size: 0.8em;
-        margin: -6px 1px 2px -1px;
+        font-size: 1em;
+        margin: -6px 1px 2px 1px;
     }
     .GenInfo{
         display: flex;
