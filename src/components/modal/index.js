@@ -26,14 +26,14 @@ const validate = values =>{
     if(!values.password){
         errors.password = 'Password is Required'
     }
-    else if(values.cvv.length<4){
-        errors.cvv = 'Password cannot be less than 4'
+    else if(values.password.length<4){
+        errors.password = 'Password cannot be less than 4'
     }
 
     if(!values.expiryDate){
-        errors.password = 'Invalid Expiry Date'
+        errors.expiryDate = 'Invalid Expiry Date'
     }
-    
+    return errors    
 
 }
 const ModalPopUp = ()=>{
@@ -50,13 +50,17 @@ const ModalPopUp = ()=>{
             password: '',
             cvv: ''
         }, validate,
-        onSubmit: (values)=>{
+        onSubmit: values=>{
             console.log(values)
             alert('form successfully submitted ')
         }
         
     })
 
+    const closeModal = ()=>{
+        console.log('ji')
+        setIsShow(false)
+    }
     useEffect(()=>{
         initModal()
     })
@@ -65,17 +69,17 @@ const ModalPopUp = ()=>{
         <Modal show={isShow} dialogClassName="modal-90w"   >
             <div className='container form'>
                 <div className='row content '>
-            
+
                     <div className='col-lg-7 col-sm-12 col-md-12' >
                         <Modal.Title className='col-lg-7 col-sm-12 col-md-12 content'>
                         <div className="row">
-                            <div className='col-lg-9 col-sm-12 col-md-12  header'>
+                            <div className='col-lg-8 col-sm-11 col-md-11  header'>
                                 <span>
                                     <img src="/imgs/txtlogo.png" alt="logo"/>
                                 </span>
                                 <h3><span><b>AceCoin</b></span>Pay</h3>
                              </div>
-                            <div className='col-sm-12 col-md-12 col-lg-3 badge_div'>
+                            <div className='col-sm-12 col-md- col-lg-3 badge_div'>
                                 <Badge  className='badge' bg="secondary">0</Badge>
                                 <Badge className='badge' bg="secondary">1</Badge>
                                 :
@@ -83,7 +87,7 @@ const ModalPopUp = ()=>{
                                 <Badge bg="secondary" className='badge'>9</Badge>
 
                             </div>
-
+                            
                         </div>
                         </Modal.Title>
                         <Modal.Body  ></Modal.Body >
@@ -104,7 +108,7 @@ const ModalPopUp = ()=>{
                                         onChange={formik.handleChange}
                                         value={formik.values.cardNumber}
                                     />
-                                    {formik.errors.cardNumber? <span>{formik.errors.cardNumber}</span>: null}
+                                    {formik.errors.cardNumber? <span className="errMsg">{formik.errors.cardNumber}</span>: null}
                                 </div>
                                 <div  className='fieldContianer'>
                                     <div className={`col-5`}>
@@ -121,7 +125,7 @@ const ModalPopUp = ()=>{
                                             onChange={formik.handleChange}
                                             value={formik.values.cvv}
                                         />
-                                    {formik.errors.cvv? <span>{formik.errors.cvv}</span>: null}
+                                    {formik.errors.cvv? <span className="errMsg">{formik.errors.cvv}</span>: null}
 
                                     </div>
                                     
@@ -141,7 +145,7 @@ const ModalPopUp = ()=>{
                                             onChange={formik.handleChange}
                                             value={formik.values.expiryDate}
                                         />
-                                    {formik.errors.expiryDate? <span>{formik.errors.expiryDate}</span>: null}
+                                    {formik.errors.expiryDate? <span className="errMsg">{formik.errors.expiryDate}</span>: null}
 
                                     </div>
                                     
@@ -161,7 +165,7 @@ const ModalPopUp = ()=>{
                                             onChange={formik.handleChange}
                                             value={formik.values.password}
                                         />
-                                    {formik.errors.password? <span>{formik.errors.password}</span>: null}
+                                    {formik.errors.password? <span className="errMsg">{formik.errors.password}</span>: null}
 
                                     </div>
                                     
@@ -177,76 +181,81 @@ const ModalPopUp = ()=>{
                         </div>
                     </div >
                     <div className="col-4">
-                    <div className='cardDetail' >
-                        <div className='mstCard'>
-                             <div className='chip'>
-                                <img src="imgs/chip.png" alt="env chip"/>
-                            </div>
-                            <div className='wifi'>
-                                <WifiIcon className='wifiSignal'/>
-                            </div>
-                            
-                                    
-                        </div>
-                        <div className='userInfo'>
-                            <p className='name'>Jonathan Micheal</p>
-                            <p className='numberSample'>....  3456</p>
-                        </div>
-                        <div  className='Style.otherInfo'>
-                            <div className='date'>
-                                <p>09/22</p>
-                            </div>
-                            <div className='mstLogo'>
-                                <img src="imgs/mastercard.svg" alt="mastercard logo"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='bg'>
-                        <div className='companyInfo'>
-                            <div className='company'>
-                                <p className='companyName'>Company</p>
-                                <p className='companylogo'>
-                                    <p><AppleIcon className='companylogos' /></p>
-                                    Apple
-                                </p>
-                            </div>
-                            <div className='GenInfo'>
-                                <p className='GenName'>Order Number</p>
-                                <p  className='GenNumber'>1266201</p>
-
-                            </div>
-                            <div className='GenInfo'>
-                                <p className='GenName'>Product</p>
-                                <p  className='GenNumber'>MacBook Air</p>
-
-                            </div>
-                            <div className='GenInfo'>
-                                <p className='GenName'>VAT(20)</p>
-                                <p  className='GenNumber'>$100.00</p>
-
-                            </div>
-                        </div>
-                        <hr />
-
-                        <div className='balance'>
-
-                            <p className='pay'>You have to pay</p>
-                            <div className='amount'>
-                                <div className='amountInfo'>
-                                <p className='price'>549.</p><p className='cent'>99</p>
-                                    <span className='currency'>USD</span>
+                        <div className='cardDetail' >
+                            <div className='mstCard'>
+                                <div className='chip'>
+                                    <img src="imgs/chip.png" alt="env chip"/>
                                 </div>
-                                <div className='bill'>
-                                    <img src="imgs/bill.png"  className='recieptt' alt="reciept"/>
+                                <div className='wifi'>
+                                    <WifiIcon className='wifiSignal'/>
+                                </div>
+                                
+                                        
+                            </div>
+                            <div className='userInfo'>
+                                <p className='name'>Jonathan Micheal</p>
+                                <p className='numberSample'>....  3456</p>
+                            </div>
+                            <div  className='otherInfo'>
+                                <div className='date'>
+                                    <p>09/22</p>
+                                </div>
+                                <div className='mstLogo'>
+                                    <img src="imgs/mastercard.svg" alt="mastercard logo"/>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        <div className='bg'>
+                            <div className='companyInfo'>
+                                <div className='company'>
+                                    <p className='companyName'>Company</p>
+                                    <p className='companylogo'>
+                                        <p><AppleIcon className='companylogos' /></p>
+                                        Apple
+                                    </p>
+                                </div>
+                                <div className='GenInfo'>
+                                    <p className='GenName'>Order Number</p>
+                                    <p  className='GenNumber'>1266201</p>
+
+                                </div>
+                                <div className='GenInfo'>
+                                    <p className='GenName'>Product</p>
+                                    <p  className='GenNumber'>MacBook Air</p>
+
+                                </div>
+                                <div className='GenInfo'>
+                                    <p className='GenName'>VAT(20)</p>
+                                    <p  className='GenNumber'>$100.00</p>
+
+                                </div>
+                            </div>
+                            <hr />
+
+                            <div className='balance'>
+
+                                <p className='pay'>You have to pay</p>
+                                <div className='amount'>
+                                    <div className='amountInfo'>
+                                    <p className='price'>549.</p><p className='cent'>99</p>
+                                        <span className='currency'>USD</span>
+                                    </div>
+                                    <div className='bill'>
+                                        <img src="imgs/bill.png"  className='recieptt' alt="reciept"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                     
                 </div>
+                <div className="col-1 closeBtn" >
+                <button onClick={closeModal} className="btn btn-close"></button>
+
             </div>
+            </div>
+            
         </Modal>
     )
 

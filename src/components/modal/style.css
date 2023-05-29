@@ -6,6 +6,11 @@
         height: 100%;
         position: fixed;
     }
+    .errMsg{
+        color: black;
+        font-weight: 500;
+        font-size: 0.8em;
+    }
     
     p{
         height: 100%;
@@ -97,7 +102,7 @@
         height: 40%;
         width: 100%;
         display: flex;
-        margin: 1% 1% 15% 1%;
+        margin: 1% 1% 5% 1%;
 
     }
     .wifiSignal{
@@ -109,19 +114,19 @@
     }
     .userInfo{
         width: 90%;
-        margin: 15% 2% 2% 10%;
+        margin: 10% 2% 2% 10%;
     }
     .userInfo p{
         font-size: 1.1em;
         margin: 2% 1% 2% 3%;
     }
     .otherInfo{
-        margin: 7% 2% 5% 2%;
+        margin: 3% 2% 5% 2%;
         height: 20%;
         display: flex;
     }
     .date{
-        margin: 1% 2% 20% 2%;
+        margin: 5% 2% 20% 2%;
     }
     
     .mstLogo{
@@ -150,7 +155,7 @@
     }
     
     .companyName{
-        color:  rgba(128,128,128, 0.6);
+        color:  rgba(0,0,0, 0.6);
         margin: 1% 1% 0% 1% ;
         
     }
@@ -162,23 +167,25 @@
     .companylogo p{
         border-radius: 50%;
         background-color: black;
-        width: 20px;
-        height: 20px;
+        width: 22px;
+        height: 22px;
         margin: 7% 10% 1% 1%;
     }
     .companylogos{
         color: white;
-        font-size: 0.8em;
-        margin: -10px 1px 2px -1.5px;
+        font-size: 0.6em;
+        margin: -9px 1px 2px -1px;
     }
     .GenInfo{
         display: flex;
         margin: -2% 0 ;
 
     }
-
+    .closeBtn{
+        margin: -50% 2% 1% 90%;
+    }
     .GenName{
-        color:  rgba(140,140,140, 1);
+        color:  rgba(0,0,0, 0.6);
         margin: 1% 1% 0% 1% ;
         width: 5%; 
         font-size: 0.9em;
