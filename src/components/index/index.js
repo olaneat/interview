@@ -26,12 +26,12 @@ const validate = values =>{
     if(!values.password){
         errors.password = 'Password is Required'
     }
-    else if(values.cvv.length<4){
-        errors.cvv = 'Password cannot be less than 4'
+    else if(values.password.length<4){
+        errors.password = 'Password cannot be less than 4'
     }
 
     if(!values.expiryDate){
-        errors.password = 'Invalid Expiry Date'
+        errors.expiryDate = 'Invalid Expiry Date'
     }
     return errors    
 
@@ -64,7 +64,9 @@ const Index = () =>{
                     <div className={`col-lg-7 col-sm-12 col-md-12 ${Style.content}` }>
                         <div className="row">
                             <div className={`col-lg-9 col-sm-12 col-md-12  ${Style.header}`}>
-                                <span></span>
+                                <span>
+                                    <img src=""/>
+                                </span>
                                 <h3><span><b>AceCoin</b></span>Pay</h3>
                             </div>
                             <div className={`col-sm-12 col-md-12 col-lg-3 ${Style.badge_div}`}>
